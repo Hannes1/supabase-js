@@ -81,6 +81,7 @@ export default class SupabaseClient {
    */
   from<T = any>(table: string): SupabaseQueryBuilder<T> {
     const url = `${this.restUrl}/${table}`
+    console.log(this.realtime)
     return new SupabaseQueryBuilder<T>(url, {
       headers: this._getAuthHeaders(),
       schema: this.schema,
